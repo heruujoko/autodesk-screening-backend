@@ -35,17 +35,10 @@ func ValidateSchema(data interface{}) (error, interface{}) {
 
 		for _, err := range err.(validator.ValidationErrors) {
 
-			// fmt.Println(err.Namespace())
-			// fmt.Println(err.Field())
-			// fmt.Println(err.StructNamespace())
-			// fmt.Println(err.StructField())
-			// fmt.Println(err.Tag())
-			// fmt.Println(err.ActualTag())
-			// fmt.Println(err.Kind())
-			// fmt.Println(err.Type())
-			// fmt.Println(err.Value())
-			// fmt.Println(err.Param())
-			// fmt.Println()
+			/** 
+				more fileds to explore in :
+			 	https://github.com/go-playground/validator/blob/master/_examples/simple/main.go
+			**/
 
 			fld := FieldError {
 				FieldName: err.Field(),
