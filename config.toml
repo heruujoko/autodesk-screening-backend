@@ -1,0 +1,6 @@
+[database]
+name="autodesk"
+host="localhost"
+password=""
+user="root"
+port=3306
