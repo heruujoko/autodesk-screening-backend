@@ -54,10 +54,16 @@ func FindByUsername(username string) (*utils.ErrorBag, *Identity) {
 	user := &Identity{}
 	result := DB.Where("username = ?", username).First(&user)
 	if result.Error != nil {
+		respObject := utils.FieldError{
+			FieldName: "username",
+			Status:    "not found",
+			Type:      "string",
+			Message:   "The username is not recognized",
+		}
 		errors := utils.ErrorBag{
 			Code:    "NOT_FOUND",
-			Message: "username not found",
-			Data:    "username not found",
+			Message: "The username is not recognized",
+			Data:    []utils.FieldError{respObject},
 		}
 		return &errors, nil
 	} else {
