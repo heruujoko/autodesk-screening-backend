@@ -34,7 +34,6 @@ func CreateNewIdentity(data *UserRegisterRequest) (*utils.ErrorBag, *Identity) {
 		FirstName:    data.FirstName,
 		LastName:     data.LastName,
 		PasswordHash: hashedPassword,
-		Email:        data.Email,
 		Username:     data.Username,
 	}
 	result := DB.Save(&identity)

@@ -6,7 +6,6 @@ import (
 
 type Identity struct {
 	utils.ModelBase
-	Email        string `json:"email" gorm:"unique;not null";sql:"index"`
 	FirstName    string `json:"firstName"`
 	LastName     string `json:"lastName"`
 	Username     string `json:"username" gorm:"unique;not null";sql:"index"`
@@ -14,7 +13,6 @@ type Identity struct {
 }
 
 type UserRegisterRequest struct {
-	Email     string `json:"email" validate:"required"`
 	FirstName string `json:"firstName" validate:"required"`
 	LastName  string `json:"lastName" validate:"required"`
 	Password  string `json:"password" validate:"required"`
